@@ -659,5 +659,22 @@ namespace Censo_Inegi.Controllers
                 return Ok(new { apiName, msg = ex.Message, error = true });
             }
         }
+
+
+        [HttpGet]
+        [Route("get_Personas_Municipio")]
+        public ActionResult get_Personas_Municipio()
+        {
+            string apiName = "get_Personas_Municipio";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.get_Personas_Municipio(), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
     }
 }

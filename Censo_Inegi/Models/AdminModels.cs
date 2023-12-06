@@ -174,6 +174,10 @@
             public int ID { get; set; }
             public string NOMBRE { get; set; }
         }
-
+        public class dash
+        {
+            public string NOMBRE { get; set; }
+            public int PERSONAS { get; set; }
+        }
     }
 }

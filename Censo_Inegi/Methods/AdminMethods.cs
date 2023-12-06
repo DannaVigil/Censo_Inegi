@@ -377,7 +377,7 @@ namespace Censo_Inegi.Methods
             }
         }
 
-        public IEnumerable<getMunicipioUnique> get_Unique_TipoVivienda(getRolID data)
+        public IEnumerable<getActividadUnique> get_Unique_TipoVivienda(getRolID data)
         {
             try
             {
@@ -388,7 +388,7 @@ namespace Censo_Inegi.Methods
                                 FROM TIPO_VIVIENDA
                                 WHERE ID ={id}";
 
-                return SQLService.SelectMethod<getMunicipioUnique>(qry, Coneccion.GetConnectionString());
+                return SQLService.SelectMethod<getActividadUnique>(qry, Coneccion.GetConnectionString());
             }
             catch
             {
@@ -719,6 +719,26 @@ WHERE ID={id}";
                                 WHERE CURP = '{curp}'";
 
                 return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<dash> get_Personas_Municipio()
+        {
+            try
+            {
+
+
+                string qry = $@"SELECT DISTINCT M.NOMBRE, COUNT(DISTINCT CURP) PERSONAS
+                                FROM PERSONAS P
+                            LEFT JOIN VIVIENDAS V ON V.ID =P.ID_VIVIENDA
+                            LEFT JOIN MUNICIPIOS M ON M.ID =V.ID_MUNICIPIO
+                            GROUP BY M.NOMBRE";
+
+                return SQLService.SelectMethod<dash>(qry, Coneccion.GetConnectionString());
             }
             catch
             {
