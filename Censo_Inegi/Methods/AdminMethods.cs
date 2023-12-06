@@ -598,5 +598,132 @@ namespace Censo_Inegi.Methods
                 throw;
             }
         }
+
+        public dynamic delete_Users(getRolID data)
+        {
+            try
+            {
+                int id = (int)data.ID;
+
+
+                string qry = $@"DELETE USERS
+                                    WHERE ID ={id}";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public dynamic delete_Municipios(getMunicipioID data)
+        {
+            try
+            {
+                string id = data.ID != null && data.ID.Any() ? string.Join("','", data.ID) : "";
+
+
+                string qry = $@"DELETE MUNICIPIOS
+                                WHERE ID='{id}'";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public dynamic delete_Tipo_Vivienda(getRolID data)
+        {
+            try
+            {
+                int id = (int)data.ID;
+
+
+                string qry = $@"DELETE TIPO_VIVIENDA
+                                WHERE ID={id}";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        public dynamic delete_Actividad_Economica(getRolID data)
+        {
+            try
+            {
+                int id = (int)data.ID;
+
+
+                string qry = $@"DELETE ACTIVIDAD_ECONOMICA
+                                WHERE ID={id}";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public dynamic delete_Actividades_Viviendas(getRolID data)
+        {
+            try
+            {
+                int id = (int)data.ID;
+
+
+                string qry = $@"DELETE ACTIVIDADES_VIVIENDAS
+                                WHERE ID = {id}";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public dynamic delete_Viviendas(getRolID data)
+        {
+            try
+            {
+                int id = (int)data.ID;
+
+
+                string qry = $@"DELETE VIVIENDAS
+WHERE ID={id}";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public dynamic delete_Personas(curp data)
+        {
+            try
+            {
+                string curp = data.CURP != null && data.CURP.Any() ? string.Join("','", data.CURP) : "";
+
+
+                string qry = $@"DELETE PERSONAS
+                                WHERE CURP = '{curp}'";
+
+                return SQLService.DeleteMethod(qry, Coneccion.GetConnectionString());
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

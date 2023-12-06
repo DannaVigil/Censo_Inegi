@@ -548,5 +548,116 @@ namespace Censo_Inegi.Controllers
                 return Ok(new { apiName, msg = ex.Message, error = true });
             }
         }
+
+
+        [HttpPost]
+        [Route("delete_Users")]
+        public ActionResult delete_Users(getRolID data)
+        {
+            string apiName = "delete_Users";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Users(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+
+        [HttpPost]
+        [Route("delete_Municipios")]
+        public ActionResult delete_Municipios(getMunicipioID data)
+        {
+            string apiName = "delete_Municipios";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Municipios(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+
+        [HttpPost]
+        [Route("delete_Tipo_Vivienda")]
+        public ActionResult delete_Tipo_Vivienda(getRolID data)
+        {
+            string apiName = "delete_Tipo_Vivienda";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Tipo_Vivienda(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+
+        [HttpPost]
+        [Route("delete_Actividad_Economica")]
+        public ActionResult delete_Actividad_Economica(getRolID data)
+        {
+            string apiName = "delete_Actividad_Economica";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Actividad_Economica(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+        [HttpPost]
+        [Route("delete_Actividades_Viviendas")]
+        public ActionResult delete_Actividades_Viviendas(getRolID data)
+        {
+            string apiName = "delete_Actividades_Viviendas";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Actividades_Viviendas(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+        [HttpPost]
+        [Route("delete_Viviendas")]
+        public ActionResult delete_Viviendas(getRolID data)
+        {
+            string apiName = "delete_Viviendas";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Viviendas(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
+
+        [HttpPost]
+        [Route("delete_Personas")]
+        public ActionResult delete_Personas(curp data)
+        {
+            string apiName = "delete_Personas";
+
+            try
+            {
+                return Ok(new { apiName, msg = "OK", data = methods.delete_Personas(data), error = false });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { apiName, msg = ex.Message, error = true });
+            }
+        }
     }
 }
